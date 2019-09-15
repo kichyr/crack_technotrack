@@ -49,16 +49,17 @@ def create_code(input_html):
     start_index = find_start_index(html)
     end_index = find_end_index(html, start_index)
     file.write(str(html[start_index:end_index + 1]))
-    sp.call(r"gcc /home/kichyr/Desktop/crack_technotrack/programm.cpp")
         
 
 def main():
     
-    while(True):
-        url = str(input())
-        response = urlopen(url)
-        html = str(response.read().decode())
-        create_code(html)
+    """ url = str(input())
+    response = urlopen(url)
+    html = str(response.read().decode()) """
+    with open ("input.txt", "r") as myfile:
+        html=myfile.read()
+    create_code(html)
+
         
 
 if (__name__ == "__main__"):
